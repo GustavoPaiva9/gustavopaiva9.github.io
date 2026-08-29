@@ -4,7 +4,7 @@ Site estático em HTML/CSS/JavaScript, inspirado no layout do Figma Sites.
 
 ## Antes de publicar
 Edite `index.html` e troque:
-- `SEUEMAIL@EXEMPLO.COM`
+- `Fulano@Fulano`
 - os links do GitHub e LinkedIn
 - os links `#` dos projetos
 - textos de experiência/projetos pelos dados definitivos
@@ -21,6 +21,3 @@ Edite `index.html` e troque:
 Para o domínio raiz, o GitHub Pages atualmente recomenda registros A apontando para os endereços oficiais do GitHub Pages. Para `www`, use CNAME para o endereço `<SEU_USUARIO>.github.io`.
 
 Não copie valores de exemplos antigos da internet: confira os registros atuais na documentação oficial do GitHub antes de salvar o DNS.
-
-## Observação
-O domínio deve ser conectado ao GitHub Pages por DNS, e não pelo recurso de "redirecionamento" do Registro.br. Assim o navegador permanece em `gustavopaiva9.com.br`.
