@@ -3,20 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfólio de Gustavo Paiva — Analista de Sistemas, desenvolvimento, infraestrutura e automação.">
+  <meta name="description" content="Portfólio profissional de Gustavo Paiva — Consultor de TI, infraestrutura, automação, desenvolvimento e transformação digital.">
   <meta name="theme-color" content="#05080d">
-  <title>Gustavo Paiva | GPN.dev</title>
+  <title>Gustavo Paiva | GPN Studio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="nav-wrap">
     <nav class="nav container" aria-label="Navegação principal">
-      <a class="brand" href="#inicio" aria-label="GPN.dev - início">GPN<span>.dev</span></a>
+      <a class="brand" href="#inicio" aria-label="GPN Studio">GPN <span>Studio</span></a>
       <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
       <div class="nav-links">
         <a href="#sobre">Sobre</a>
+        <a href="#resumo">Resumo</a>
+        <a href="#formacao">Formação</a>
+        <a href="#certificacoes">Certificações</a>
         <a href="#skills">Skills</a>
-        <a href="#projetos">Projetos</a>
         <a href="#experiencia">Experiência</a>
         <a href="#contato">Contato</a>
         <a class="hire" href="#contato">Contrate-me</a>
@@ -28,18 +30,18 @@
     <section id="inicio" class="hero container">
       <div class="hero-copy">
         <div class="status"><span></span> Disponível para novas oportunidades <b>•</b> <span class="pin">⌖</span> São Paulo, SP</div>
-        <p class="kicker">Analista de Sistemas • Automação • Infraestrutura • IA</p>
-        <h1><strong>12 anos</strong> transformando<br>tecnologia em <em>resultado.</em></h1>
-        <p class="lead-copy">Sou Gustavo Paiva, profissional de TI com experiência em desenvolvimento de sistemas, infraestrutura corporativa, automação de processos e melhoria contínua de serviços digitais. Trabalho conectando tecnologia, negócios e operação para entregar soluções práticas, escaláveis e confiáveis.</p>
+        <p class="kicker">Technology strategy • Infrastructure • Automation • AI</p>
+        <h1>Tecnologia para negócios<br>que crescem com <em>clareza e velocidade.</em></h1>
+        <p class="lead-copy">Especialista em infraestrutura, automação e transformação digital, com 12+ anos de experiência ajudando empresas a reduzir riscos, acelerar operações e converter tecnologia em vantagem competitiva.</p>
         <div class="actions">
           <a class="btn primary" href="#projetos">Ver projetos <span>→</span></a>
-          <a class="btn secondary" href="#contato">✉ Entrar em contato</a>
+          <a class="btn secondary" href="#contato">Entrar em contato</a>
           <a class="icon-btn" href="https://github.com/GustavoPaiva9" target="_blank" rel="noopener" aria-label="GitHub">⌘</a>
           <a class="icon-btn" href="https://www.linkedin.com/in/gustavopaiva9" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
         </div>
         <div class="stats">
           <div><strong>12+</strong><span>Anos de exp.</span></div>
-          <div><strong>4</strong><span>Sistemas</span></div>
+          <div><strong>5</strong><span>Áreas TI</span></div>
           <div><strong>7+</strong><span>Empresas</span></div>
           <div><strong>15+</strong><span>Certificações</span></div>
         </div>
@@ -47,16 +49,17 @@
 
       <div class="hero-panel">
         <div class="terminal">
-          <div class="terminal-bar"><span></span><span></span><span></span><small>~/projetos-gustavo — zsh</small></div>
-          <pre><code><i>$</i> python automacao_relatorios.py --input ./dados.csv
-Carregando 12.450 registros...
-Aplicando modelo de IA para classificação...
-<span>✓ Relatório exportado → ./output/analise_2024.pdf</span>
-<span>✓ git add . && git commit -m 'feat: automação completa'</span>
-<span>✓ Branch main — 1 commit adicionado</span>
-<span>✓ docker build -t sistema-clinica:latest . && docker deploy</span>
-<span>✓ Imagem construída — deploy concluído em 31s</span>
-<i class="cursor">▋</i></code></pre>
+          <div class="terminal-bar"><span></span><span></span><span></span><small>~/studio/gustavo — zsh</small></div>
+          <div class="terminal-body">
+            <div class="terminal-line"><span class="prompt">$</span> python pipeline_automatizado.py --dataset ./dados/clientes.csv --report ./relatorios/operacao.json</div>
+            <div class="terminal-line">Carregando 12.450 registros...</div>
+            <div class="terminal-line">Validando regras de negócio...</div>
+            <div class="terminal-line">Aplicando IA para classificação e priorização...</div>
+            <div class="terminal-line success">✓ Relatório concluído → ./relatorios/operacao.json</div>
+            <div class="terminal-line success">✓ git add . && git commit -m "feat: entrega automatizada"</div>
+            <div class="terminal-line success">✓ Deploy finalizado em 31s</div>
+            <div class="terminal-line prompt-line"><span class="cursor">▌</span></div>
+          </div>
         </div>
         <div class="mini-grid">
           <div><span>Cloud</span><strong>Azure / AWS</strong></div>
@@ -71,89 +74,247 @@ Aplicando modelo de IA para classificação...
       <div class="section-head"><span>01</span><h2>Sobre</h2></div>
       <div class="about-grid">
         <div>
-          <p class="lead">Tecnologia aplicada ao problema certo.</p>
+          <p class="lead">Tecnologia que gera valor e escala.</p>
           <div class="cv-meta">
             <span>Bacharel em Ciência da Computação</span>
-            <span>Especialização contínua em IA, Cloud e DevOps</span>
+            <span>UNIP • 2014</span>
           </div>
         </div>
         <div class="about-copy">
-          <p>Atuo conectando desenvolvimento, infraestrutura e automação para transformar requisitos de negócio em soluções práticas, estáveis e sustentáveis.</p>
-          <p>Minha atuação combina análise técnica, manutenção de sistemas, melhoria de processos e suporte operacional, com foco em performance, redução de retrabalho e produtividade.</p>
+          <p>Profissional técnico, analítico e estratégica, com capacidade de conectar infraestrutura, suporte e desenvolvimento em soluções práticas e escaláveis.</p>
+          <p>Minha atuação combina execução operacional com visão de negócio, entregando serviços que fortalecem processos, aumentam eficiência e apoiam a evolução digital da empresa.</p>
         </div>
       </div>
+    </section>
+
+    <section id="resumo" class="section container">
+      <div class="section-head"><span>02</span><h2>Resumo Profissional</h2></div>
+      <div class="summary-card">
+        <p>Profissional com mais de 12 anos de experiência em Tecnologia da Informação, atuando em suporte técnico, infraestrutura, análise de sistemas, desenvolvimento e automação de processos. Bacharel em Ciência da Computação pela Universidade Paulista (UNIP), com formação complementar em segurança da informação, cloud computing, desenvolvimento web/mobile e inteligência artificial.</p>
+        <p>Ao longo da carreira, concentrei meus esforços em ambientes corporativos e públicos, entregando soluções que fortalecem a operação, reduzem falhas e melhoram a experiência dos usuários e da equipe interna.</p>
+        <p>Tenho experiência com Active Directory, Zabbix, Jira, Git, firewalls SonicWall e Fortinet, além de Java, C#, JavaScript, Python, ASP.NET, VBA e Visual Basic. Também trabalho com SQL Server, Oracle, MySQL, PL/SQL e MongoDB, sempre com foco em confiabilidade, performance e continuidade de negócios.</p>
+      </div>
+    </section>
+
+    <section id="formacao" class="section container">
+      <div class="section-head"><span>03</span><h2>Formação Acadêmica</h2></div>
+      <div class="info-panel">
+        <h3>Bacharelado em Ciência da Computação</h3>
+        <p>Universidade Paulista – UNIP</p>
+        <span>Conclusão: 2014</span>
+      </div>
+    </section>
+
+    <section id="certificacoes" class="section container">
+      <div class="section-head"><span>04</span><h2>Certificações e Cursos</h2></div>
+      <ul class="cert-list">
+        <li>Pacote Office, Hardware e Programação – Skill Schooling Informática (2012)</li>
+        <li>Desenvolvedor de Sistemas – Prática Formação Profissional (2018)</li>
+        <li>Segurança da Informação – Universidade de Brasília (2019)</li>
+        <li>Introdução à Gestão de Continuidade de Negócios – Strohl Brasil (2019)</li>
+        <li>Aplicativos para Dispositivos Móveis – LSITEC e Samsung (2019)</li>
+        <li>Microsoft MVA Top 10 Recursos Windows 10 – Brasil Mais Digital (2020)</li>
+        <li>Inteligência Artificial – Fundamentos – Data Science Academy (2020)</li>
+        <li>Webinar Java: Do Zero ao Web Service – Ka Solution (2020)</li>
+        <li>Microsoft Azure Data Fundamentals DP-900 – Ka Solution (2021)</li>
+        <li>SAP para Iniciantes – Ka Solution (2021)</li>
+        <li>Cube Professional – Udemy (2022)</li>
+        <li>Cube Advanced III – Udemy (2022)</li>
+        <li>JavaScript com Orientação a Objetos e DOM – Udemy (2023)</li>
+        <li>Intensivo MultiCloud, DevOps & IA (2024)</li>
+        <li>Ciência da Computação de Harvard no Brasil – Fundação Estudar (2024)</li>
+        <li>IA para Todos – StartSe (2025)</li>
+        <li>Workshop Oracle Database Security Introduction – Ora Master (2025)</li>
+      </ul>
     </section>
 
     <section id="skills" class="section container">
-      <div class="section-head"><span>02</span><h2>Skills</h2></div>
-      <div class="cards">
-        <article><span class="num">01</span><h3>Desenvolvimento</h3><p>Criação de aplicações web, APIs, automações e integrações que conectam processos e sistemas de forma segura.</p><div class="tags"><b>HTML/CSS</b><b>JavaScript</b><b>Python</b><b>APIs</b></div></article>
-        <article><span class="num">02</span><h3>Cloud & DevOps</h3><p>Deploy, versionamento, containers, pipeline de entrega e infraestrutura para ambientes corporativos e produtivos.</p><div class="tags"><b>Git</b><b>Docker</b><b>CI/CD</b><b>Cloud</b></div></article>
-        <article><span class="num">03</span><h3>Dados & IA</h3><p>Automação, análise de dados, modelagem de processos e aplicação prática de inteligência artificial para ganho operacional.</p><div class="tags"><b>Python</b><b>Automação</b><b>IA</b><b>Dados</b></div></article>
-      </div>
-    </section>
-
-    <section id="curriculo" class="section container">
-      <div class="section-head"><span>03</span><h2>Currículo</h2></div>
-      <div class="cv-grid">
-        <div class="cv-card">
-          <h3>Formação</h3>
+      <div class="section-head"><span>05</span><h2>Competências Técnicas</h2></div>
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h3>Infraestrutura e Suporte</h3>
           <ul>
-            <li>Bacharel em Ciência da Computação</li>
-            <li>Especialização contínua em IA, Cloud e DevOps</li>
-            <li>Foco em arquitetura de soluções e automação</li>
+            <li>Windows Server</li>
+            <li>Linux</li>
+            <li>macOS</li>
+            <li>Active Directory</li>
+            <li>Zabbix</li>
+            <li>Redes e infraestrutura lógica</li>
+            <li>Organização de racks</li>
+            <li>VoIP</li>
+            <li>Firewalls SonicWall e Fortinet</li>
+            <li>Suporte técnico N1 e N2</li>
           </ul>
         </div>
-        <div class="cv-card">
-          <h3>Experiência</h3>
+        <div class="skill-box">
+          <h3>Desenvolvimento</h3>
           <ul>
-            <li>+12 anos em Tecnologia da Informação</li>
-            <li>Atuação em suporte, desenvolvimento e infraestrutura</li>
-            <li>Participação em projetos de automação e otimização operacional</li>
+            <li>Java</li>
+            <li>C#</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>ASP.NET</li>
+            <li>VBA</li>
+            <li>Visual Basic</li>
           </ul>
         </div>
-        <div class="cv-card">
+        <div class="skill-box">
+          <h3>Banco de Dados</h3>
+          <ul>
+            <li>SQL Server</li>
+            <li>Oracle</li>
+            <li>MySQL</li>
+            <li>PL/SQL</li>
+            <li>MongoDB</li>
+          </ul>
+        </div>
+        <div class="skill-box">
           <h3>Ferramentas</h3>
-          <div class="tags full">
-            <b>Python</b><b>JavaScript</b><b>HTML</b><b>CSS</b><b>Git</b><b>Docker</b><b>Linux</b><b>SQL</b><b>IA</b>
-          </div>
+          <ul>
+            <li>Jira</li>
+            <li>Git</li>
+            <li>Pacote Office</li>
+            <li>Scrum</li>
+            <li>Kanban</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section id="projetos" class="section container">
-      <div class="section-head"><span>04</span><h2>Projetos</h2></div>
+      <div class="section-head"><span>06</span><h2>Projetos com impacto</h2></div>
       <div class="project-grid">
-        <article class="project"><div class="project-top"><span>01</span><span>GitHub Pages</span></div><h3>Portfolio profissional</h3><p>Site institucional com foco em apresentação profissional, experiência e contato, em uma identidade visual moderna e funcional.</p><a href="https://github.com/GustavoPaiva9/gustavopaiva9.github.io" target="_blank" rel="noopener" class="project-link">Ver projeto →</a></article>
-        <article class="project"><div class="project-top"><span>02</span><span>Automação</span></div><h3>Relatórios e produtividade</h3><p>Fluxos para processar dados, reduzir etapas manuais e automatizar rotina de entrega de informações em ambientes corporativos.</p><a href="https://github.com/GustavoPaiva9" target="_blank" rel="noopener" class="project-link">Ver projeto →</a></article>
-        <article class="project"><div class="project-top"><span>03</span><span>DevOps</span></div><h3>Deploy e infraestrutura</h3><p>Estrutura para versionamento, publicação, build e manutenção de soluções com foco em confiabilidade e tempo de entrega.</p><a href="https://github.com/GustavoPaiva9" target="_blank" rel="noopener" class="project-link">Ver projeto →</a></article>
+        <article class="project-card">
+          <div class="project-top"><span>2024</span><span>Operação</span></div>
+          <h3>Automação de processos</h3>
+          <p>Criação de rotinas e documentação operacional para reduzir retrabalho, padronizar tarefas e aumentar consistência nas entregas.</p>
+        </article>
+        <article class="project-card">
+          <div class="project-top"><span>2018</span><span>Negócio</span></div>
+          <h3>Gestão clínica digital</h3>
+          <p>Desenvolvimento de sistema web para melhorar o fluxo de atendimentos, organização de dados e eficiência da operação clínica.</p>
+        </article>
+        <article class="project-card">
+          <div class="project-top"><span>2018</span><span>Controle</span></div>
+          <h3>Cadastro e compras</h3>
+          <p>Sistema em Java com integração a banco de dados para centralizar pedidos, cadastros e rastreabilidade dos processos internos.</p>
+        </article>
+        <article class="project-card">
+          <div class="project-top"><span>2017</span><span>Financeiro</span></div>
+          <h3>Apuração de remanescente</h3>
+          <p>Aplicação para organizar cálculos financeiros, facilitar a análise de dados e apoiar decisões com mais rapidez e confiabilidade.</p>
+        </article>
       </div>
     </section>
 
     <section id="experiencia" class="section container">
-      <div class="section-head"><span>05</span><h2>Experiência</h2></div>
+      <div class="section-head"><span>07</span><h2>Experiência Profissional</h2></div>
       <div class="timeline">
-        <article><div class="year">ATUAL</div><div><h3>Analista de Sistemas</h3><p>Desenvolvimento de soluções, automação de processos, suporte técnico e melhoria contínua de sistemas utilizados no negócio.</p></div></article>
-        <article><div class="year">2014–2024</div><div><h3>Infraestrutura e TI corporativa</h3><p>Atuação em suporte técnico, ambiente Microsoft, redes, servidores, automação de rotina e otimização de processos operacionais.</p></div></article>
-        <article><div class="year">2013–2014</div><div><h3>Suporte e manutenção</h3><p>Assistência em computadores, infraestrutura básica, configuração de sistemas e atendimento a usuários em ambientes produtivos.</p></div></article>
+        <article>
+          <div class="year">2023 – Atual</div>
+          <div>
+            <h3>Analista de TI</h3>
+            <p class="company">KONEC – TOP Internacional</p>
+            <p>Manutenção e suporte técnico em computadores, servidores, PDVs e ambientes Windows, Linux e macOS; administração de infraestrutura lógica; elaboração de relatórios técnicos; atendimento a usuários e suporte operacional.</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="year">2022 – 2023</div>
+          <div>
+            <h3>Analista de TI Jr.</h3>
+            <p class="company">BRBPO Tecnologia e Serviços S.A – PMSP</p>
+            <p>Atuação com Scrum e Kanban, desenvolvimento em JavaScript, gestão de tarefas no Jira e apoio em projetos internos com foco em melhoria contínua e organização de entregas.</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="year">2021 – 2022</div>
+          <div>
+            <h3>Técnico Residente</h3>
+            <p class="company">IT2B Tecnologia e Serviços LTDA – TJSP</p>
+            <p>Instalação e manutenção de infraestrutura elétrica e lógica, organização de racks, cabeamento, gerenciamento de chamados, configuração de VoIP e suporte especializado em ambientes corporativos.</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="year">2015 • 2018 • 2019 • 2021</div>
+          <div>
+            <h3>Analista de Sistemas – Projetos pontuais</h3>
+            <p>Administração de Active Directory, monitoramento com Zabbix, modelagem e otimização de bancos de dados em SQL Server, Oracle, MySQL, PL/SQL e MongoDB, além de suporte técnico e infraestrutura lógica.</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="year">2016 – 2018</div>
+          <div>
+            <h3>Técnico de Informática</h3>
+            <p class="company">Associação de Desenvolvimento Econômico e Social às Famílias</p>
+            <p>Suporte técnico, manutenção de computadores, desenvolvimento de sistemas web, organização de racks, crimpagem de rede, instalação de impressoras e PABX, treinamento de usuários e correção de riscos operacionais.</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="year">2014</div>
+          <div>
+            <h3>Técnico de Apoio ao Usuário</h3>
+            <p class="company">CTIS Tecnologia S.A</p>
+            <p>Atendimento de suporte técnico nível 1 e 2, gestão de chamados, revisão de relatórios, infraestrutura lógica e elétrica, administração de firewalls e treinamento de usuários.</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="year">2012 – 2013</div>
+          <div>
+            <h3>Estagiário de TI</h3>
+            <p class="company">Departamento de Desapropriações</p>
+            <p>Suporte e manutenção de computadores, desenvolvimento de planilhas avançadas em Excel, integração Excel/Access com SQL, relatórios e dashboards, além de suporte operacional.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="idiomas" class="section container">
+      <div class="section-head"><span>08</span><h2>Idiomas</h2></div>
+      <div class="lang-box">
+        <span>Português: Nativo</span>
+        <span>Inglês: Técnico</span>
       </div>
     </section>
 
     <section id="contato" class="section contact container">
-      <div class="section-head"><span>06</span><h2>Contato</h2></div>
-      <div class="contact-box">
-        <div><p class="eyebrow">Vamos conversar?</p><h2>Tem um desafio de tecnologia para resolver?</h2><p>Estou aberto a oportunidades, projetos, automações e consultorias em TI, infraestrutura e desenvolvimento.</p></div>
-        <div class="contact-actions">
-          <a class="btn primary" href="mailto:gustavopaiva09@outlook.com">Enviar e-mail →</a>
-          <a class="btn secondary" href="https://www.linkedin.com/in/gustavopaiva9" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <div class="section-head"><span>09</span><h2>Contato</h2></div>
+      <div class="contact-box premium-cta">
+        <div class="contact-copy">
+          <p class="eyebrow">Hiring • Networking • Digital strategy</p>
+          <h2>Precisando de uma base tecnológica mais estável, inteligente e escalável?</h2>
+          <p>Atuo em infraestrutura, automação e evolução digital para empresas que querem mais previsibilidade operacional e melhor capacidade de execução.</p>
+          <div class="contact-tags">
+            <span>Infraestrutura</span>
+            <span>Automação</span>
+            <span>Cloud</span>
+            <span>Estratégia digital</span>
+          </div>
+        </div>
+        <div class="contact-cta-panel">
+          <div class="cta-status">
+            <span>Disponível</span>
+            <strong>Novos desafios</strong>
+          </div>
+          <a class="btn primary" href="mailto:gustavopaiva09@outlook.com">Agendar conversa →</a>
+          <div class="contact-actions">
+            <a class="btn secondary" href="https://www.linkedin.com/in/gustavopaiva9" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="btn secondary" href="https://github.com/GustavoPaiva9" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer container">
-    <span>© 2026 Gustavo de Paiva </span>
-    <span>GPN.dev · Feito com código.</span>
+    <span>© 2026 Gustavo de Paiva</span>
+    <span>GPN Studio · TI & Transformação Digital</span>
+    <span>Desenvolvido por Gustavo de Paiva</span>
   </footer>
   <script src="script.js"></script>
 </body>
