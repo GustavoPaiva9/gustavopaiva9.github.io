@@ -1,23 +1,25 @@
-# Portfólio GPN.dev — gustavopaiva9.com.br
+# GPN Studio
 
-Site estático em HTML/CSS/JavaScript, inspirado no layout do Figma Sites.
+Portfólio profissional e institucional desenvolvido para apresentar a experiência, competências e projetos de Gustavo de Paiva em tecnologia, infraestrutura, automação e transformação digital.
 
-## Antes de publicar
-Edite `index.html` e troque:
-- `Fulano@Fulano`
-- os links do GitHub e LinkedIn
-- os links `#` dos projetos
-- textos de experiência/projetos pelos dados definitivos
+## Visão geral
+Este projeto é uma landing page estática em HTML, CSS e JavaScript, com visual premium em tema dark, foco em posicionamento profissional e apresentação executiva para recrutadores, clientes e networking.
+
+## Estrutura
+- `index.html` — estrutura da página e conteúdo do portfólio
+- `style.css` — design system, responsividade e estilos visuais
+- `script.js` — interações do menu mobile
+- `CNAME` — configuração do domínio personalizado
 
 ## Publicação no GitHub Pages
-1. Crie um repositório público no GitHub.
-2. Envie `index.html`, `style.css` e `script.js`.
-3. No repositório: Settings → Pages.
-4. Em Source, selecione a branch `main` e a pasta `/ (root)`.
-5. Em Custom domain, informe `gustavopaiva9.com.br`.
-6. Depois que o DNS estiver correto, habilite `Enforce HTTPS`.
+1. Acesse o repositório no GitHub.
+2. Vá em `Settings` → `Pages`.
+3. Em `Source`, selecione a branch `main` e a pasta `/ (root)`.
+4. Configure o domínio personalizado, se necessário.
+5. Ative `Enforce HTTPS` após a validação do DNS.
 
-## DNS do Registro.br
-Para o domínio raiz, o GitHub Pages atualmente recomenda registros A apontando para os endereços oficiais do GitHub Pages. Para `www`, use CNAME para o endereço `<SEU_USUARIO>.github.io`.
+## Domínio personalizado
+Para uso com domínio próprio, configure os registros conforme a documentação oficial do GitHub Pages e do provedor de DNS escolhido.
 
-Não copie valores de exemplos antigos da internet: confira os registros atuais na documentação oficial do GitHub antes de salvar o DNS.
+## Autor
+Gustavo de Paiva
