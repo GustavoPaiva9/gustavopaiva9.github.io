@@ -164,7 +164,19 @@ a{color:inherit;text-decoration:none}
 .lang-box span{display:inline-flex;align-items:center;border:1px solid rgba(22,216,242,.25);padding:10px 14px;border-radius:999px;color:#d4dce8;font:11px "DM Mono",monospace;background:rgba(22,216,242,.04)}
 .contact-box{border:1px solid rgba(25,48,58,.9);background:radial-gradient(circle at 85% 10%,#09232a,#081019 50%);padding:44px;display:flex;justify-content:space-between;gap:28px;align-items:center;border-radius:14px;position:relative;overflow:hidden;box-shadow:0 22px 50px rgba(7,17,24,.45), inset 0 1px 0 rgba(255,255,255,.02)}
 .contact-box::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,216,242,.06),transparent 50%);pointer-events:none}
-.premium-cta{padding:36px 38px}.contact-copy,.contact-cta-panel{position:relative;z-index:1}.contact-copy{max-width:700px}.eyebrow{font:11px "DM Mono",monospace;color:var(--cyan);text-transform:uppercase;margin:0}.contact-box h2{font-size:32px;line-height:1.12;max-width:650px;margin:8px 0}.contact-box p{color:#718096}.contact-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.contact-tags span{display:inline-flex;align-items:center;border:1px solid rgba(22,216,242,.24);padding:7px 12px;border-radius:999px;background:rgba(22,216,242,.04);color:#d8e8f7;font:11px "DM Mono",monospace}.contact-cta-panel{display:grid;gap:14px;min-width:250px}.cta-status{display:grid;gap:4px;padding:14px 16px;border:1px solid rgba(22,216,242,.2);background:rgba(9,16,21,.7);border-radius:12px}.cta-status span{font:11px "DM Mono",monospace;color:#8eb2d6;text-transform:uppercase}.cta-status strong{font-size:19px}.contact-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.premium-cta{padding:36px 38px}.contact-copy,.contact-cta-panel{position:relative;z-index:1}.contact-copy{max-width:700px}.eyebrow{font:11px "DM Mono",monospace;color:var(--cyan);text-transform:uppercase;margin:0}.contact-box h2{font-size:32px;line-height:1.12;max-width:650px;margin:8px 0}.contact-box p{color:#718096}.contact-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.contact-tags span{display:inline-flex;align-items:center;border:1px solid rgba(22,216,242,.24);padding:7px 12px;border-radius:999px;background:rgba(22,216,242,.04);color:#d8e8f7;font:11px "DM Mono",monospace}.contact-cta-panel{display:grid;gap:14px;min-width:300px}.cta-status{display:grid;gap:4px;padding:14px 16px;border:1px solid rgba(22,216,242,.2);background:rgba(9,16,21,.7);border-radius:12px}.cta-status span{font:11px "DM Mono",monospace;color:#8eb2d6;text-transform:uppercase}.cta-status strong{font-size:19px}.contact-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.contact-form{display:grid;gap:12px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-field{display:grid;gap:6px}
+.form-field label{color:#8eb2d6;font:11px "DM Mono",monospace;text-transform:uppercase}
+.form-field input,.form-field textarea{width:100%;border:1px solid #23313e;border-radius:8px;background:rgba(255,255,255,.02);color:var(--text);padding:11px 12px;font:13px Inter,system-ui,sans-serif;outline:none;transition:border-color .2s,box-shadow .2s}
+.form-field input:focus,.form-field textarea:focus{border-color:rgba(22,216,242,.65);box-shadow:0 0 0 3px rgba(22,216,242,.08)}
+.form-field textarea{min-height:104px;resize:vertical}
+.form-status{min-height:18px;margin:0;color:#27d39a;font:11px "DM Mono",monospace}
+.form-status.error{color:#f27d98}
+.honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.contact-form .btn{width:100%}
+.contact-form button:disabled{cursor:wait;opacity:.65}
 .footer{display:flex;justify-content:space-between;gap:18px;padding:32px 0 50px;color:#76879d;font:11px "DM Mono",monospace;border-top:1px solid var(--line);margin-top:12px}
 
 @media(max-width:850px){
@@ -175,6 +187,7 @@ a{color:inherit;text-decoration:none}
   .stats{grid-template-columns:repeat(2,1fr);gap:18px}.stats div{border-right:0}
   .about-grid,.skills-grid,.project-grid{grid-template-columns:1fr}
   .contact-box{flex-direction:column;align-items:flex-start}
+  .form-row{grid-template-columns:1fr}
   .footer{flex-direction:column}
   .container{width:min(calc(100% - 32px),var(--max))}
 }
