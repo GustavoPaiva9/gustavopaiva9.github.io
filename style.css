@@ -171,7 +171,7 @@ a{color:inherit;text-decoration:none}
 .form-field label{color:#8eb2d6;font:11px "DM Mono",monospace;text-transform:uppercase}
 .form-field input,.form-field textarea{width:100%;border:1px solid #23313e;border-radius:8px;background:rgba(255,255,255,.02);color:var(--text);padding:11px 12px;font:13px Inter,system-ui,sans-serif;outline:none;transition:border-color .2s,box-shadow .2s}
 .form-field input:focus,.form-field textarea:focus{border-color:rgba(22,216,242,.65);box-shadow:0 0 0 3px rgba(22,216,242,.08)}
-.form-field textarea{min-height:104px;resize:vertical}
+.form-field textarea{min-height:104px;resize:none}
 .form-status{min-height:18px;margin:0;color:#27d39a;font:11px "DM Mono",monospace}
 .form-status.error{color:#f27d98}
 .honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
