@@ -22,4 +22,4 @@ Este repositório reúne um site institucional e profissional em HTML, CSS e Jav
 Para utilização com domínio próprio, configure os registros conforme a documentação oficial do GitHub Pages e do provedor de DNS escolhido.
 
 ## Autor
-Gustavo de Paiva
+Gustavo de Paiva Nascimento
