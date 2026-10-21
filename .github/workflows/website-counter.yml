@@ -1,0 +1,82 @@
+name: Website Hit Counter & Email Notification
+
+on:
+  schedule:
+    # Run daily at midnight
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  check-and-notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check website hits and send notification
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fetch = require('node-fetch');
+            
+            const COUNTER_API = 'https://countapi.mileshilliard.com/api/v1/get/gustavopaiva9.com.br-visits';
+            const EMAIL_SERVICE_WEBHOOK = 'https://discord.com/api/webhooks/1562479228405161996/oEnWaN5Sw9Jy7APDyKnGOn96c1vBZ3Ttr2CtDAsRwHU4-Z4I8gcIbKQTPYqeLdY56cDG';
+            const THRESHOLD = 10000;
+            const LAST_NOTIFICATION_FILE = './last-notification.json';
+            
+            const fs = require('fs');
+            
+            // Check if notification was already sent
+            let lastNotification = null;
+            try {
+              if (fs.existsSync(LAST_NOTIFICATION_FILE)) {
+                lastNotification = JSON.parse(fs.readFileSync(LAST_NOTIFICATION_FILE, 'utf8'));
+              }
+            } catch (error) {
+              console.log('No previous notification found');
+            }
+            
+            async function checkHitsAndNotify() {
+              try {
+                // Get current hit count
+                const response = await fetch(COUNTER_API);
+                const data = await response.json();
+                const currentHits = data.value;
+                
+                console.log(`Current website hits: ${currentHits}`);
+                
+                // Check if threshold reached and notification not already sent
+                if (currentHits >= THRESHOLD && (!lastNotification || lastNotification.hits < THRESHOLD)) {
+                  // Send Discord notification
+                  const discordPayload = {
+                    content: `🎉 **Website Milestone Reached!**\n\n` +
+                             `**GPN Studio website reached ${currentHits} hits!**\n\n` +
+                             `👋 Obrigado pela visita!\n\n` +
+                             `🌐 Site: https://gustavopaiva9.github.io/\n` +
+                             `📅 Data: ${new Date().toLocaleDateString('pt-BR')}`,
+                    username: 'GPN Studio Bot',
+                    avatar_url: ''
+                  };
+                  
+                  await fetch(EMAIL_SERVICE_WEBHOOK, {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(discordPayload)
+                  });
+                  
+                  // Record notification
+                  const notificationData = {
+                    hits: currentHits,
+                    timestamp: new Date().toISOString(),
+                    notified: true
+                  };
+                  
+                  fs.writeFileSync(LAST_NOTIFICATION_FILE, JSON.stringify(notificationData, null, 2));
+                  console.log('Discord notification sent and recorded!');
+                }
+              } catch (error) {
+                console.error('Error checking hits:', error);
+                throw error;
+              }
+            }
+            
+            await checkHitsAndNotify();
