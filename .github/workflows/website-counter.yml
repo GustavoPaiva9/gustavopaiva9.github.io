@@ -1,24 +1,24 @@
-name: Website Hit Counter & Email Notification
+name: Website Milestone Notifications
 
 on:
   schedule:
-    # Run daily at midnight
+    # Run daily at midnight to check for new milestones
     - cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
-  check-and-notify:
+  check-milestones:
     runs-on: ubuntu-latest
     steps:
-      - name: Check website hits and send notification
+      - name: Check website milestones and send notification
         uses: actions/github-script@v6
         with:
           script: |
             const fetch = require('node-fetch');
             
             const COUNTER_API = 'https://countapi.mileshilliard.com/api/v1/get/gustavopaiva9.com.br-visits';
-            const EMAIL_SERVICE_WEBHOOK = 'https://discord.com/api/webhooks/1562479228405161996/oEnWaN5Sw9Jy7APDyKnGOn96c1vBZ3Ttr2CtDAsRwHU4-Z4I8gcIbKQTPYqeLdY56cDG';
-            const THRESHOLD = 10000;
+            const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1562479228405161996/oEnWaN5Sw9Jy7APDyKnGOn96c1vBZ3Ttr2CtDAsRwHU4-Z4I8gcIbKQTPYqeLdY56cDG';
+            const MILESTONE_THRESHOLDS = [400, 800, 1200, 1600, 2000];
             const LAST_NOTIFICATION_FILE = './last-notification.json';
             
             const fs = require('fs');
@@ -33,7 +33,7 @@ jobs:
               console.log('No previous notification found');
             }
             
-            async function checkHitsAndNotify() {
+            async function checkMilestonesAndNotify() {
               try {
                 // Get current hit count
                 const response = await fetch(COUNTER_API);
@@ -42,41 +42,52 @@ jobs:
                 
                 console.log(`Current website hits: ${currentHits}`);
                 
-                // Check if threshold reached and notification not already sent
-                if (currentHits >= THRESHOLD && (!lastNotification || lastNotification.hits < THRESHOLD)) {
-                  // Send Discord notification
-                  const discordPayload = {
-                    content: `🎉 **Website Milestone Reached!**\n\n` +
-                             `**GPN Studio website reached ${currentHits} hits!**\n\n` +
-                             `👋 Obrigado pela visita!\n\n` +
-                             `🌐 Site: https://gustavopaiva9.github.io/\n` +
-                             `📅 Data: ${new Date().toLocaleDateString('pt-BR')}`,
-                    username: 'GPN Studio Bot',
-                    avatar_url: ''
-                  };
-                  
-                  await fetch(EMAIL_SERVICE_WEBHOOK, {
-                    method: 'POST',
-                    headers: {
-                      'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(discordPayload)
-                  });
+                // Check for milestones reached
+                const newlyReachedMilestones = MILESTONE_THRESHOLDS.filter(
+                  threshold => currentHits >= threshold && 
+                  (!lastNotification || lastNotification.milestones?.indexOf(threshold) === -1)
+                );
+                
+                if (newlyReachedMilestones.length > 0) {
+                  // Send Discord notification for each new milestone
+                  for (const milestone of newlyReachedMilestones) {
+                    const discordPayload = {
+                      content: `🎉 **Website Milestone Reached!**\n\n` +
+                               `**GPN Studio website reached ${milestone} hits!**\n\n` +
+                               `👋 Obrigado pela visita!\n\n` +
+                               `🌐 Site: https://gustavopaiva9.github.io/\n` +
+                               `📅 Data: ${new Date().toLocaleDateString('pt-BR')}`,
+                      username: 'GPN Studio Bot',
+                      avatar_url: ''
+                    };
+                    
+                    await fetch(DISCORD_WEBHOOK_URL, {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify(discordPayload)
+                    });
+                    
+                    console.log(`✅ Discord notification sent for ${milestone} hits!`);
+                  }
                   
                   // Record notification
                   const notificationData = {
-                    hits: currentHits,
+                    milestones: [...(lastNotification?.milestones || []), ...newlyReachedMilestones],
                     timestamp: new Date().toISOString(),
                     notified: true
                   };
                   
                   fs.writeFileSync(LAST_NOTIFICATION_FILE, JSON.stringify(notificationData, null, 2));
-                  console.log('Discord notification sent and recorded!');
+                  console.log('✅ Milestone notifications sent and recorded!');
+                } else {
+                  console.log('No new milestones reached');
                 }
               } catch (error) {
-                console.error('Error checking hits:', error);
+                console.error('Error checking milestones:', error);
                 throw error;
               }
             }
             
-            await checkHitsAndNotify();
+            await checkMilestonesAndNotify();
