@@ -11,17 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check website milestones and send notification
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
-            const fetch = require('node-fetch');
+            const fs = require('fs');
             
             const COUNTER_API = 'https://countapi.mileshilliard.com/api/v1/get/gustavopaiva9.com.br-visits';
             const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1562479228405161996/oEnWaN5Sw9Jy7APDyKnGOn96c1vBZ3Ttr2CtDAsRwHU4-Z4I8gcIbKQTPYqeLdY56cDG';
             const MILESTONE_THRESHOLDS = [400, 800, 1200, 1600, 2000];
             const LAST_NOTIFICATION_FILE = './last-notification.json';
-            
-            const fs = require('fs');
             
             // Check if notification was already sent
             let lastNotification = null;
